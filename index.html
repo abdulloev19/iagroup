@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link href="main.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <div id="app">
+        <header>
+            <div class="wrapper">
+                <div class="header_content">
+                    <div class="header_logo"><h2>IA GROUP</h3></div>
+                    <div class="header_menu">
+                        <ul>
+                            <li><a href="#">О компании</a></li>
+                            <li><a href="#">Услуги</a></li>
+                            <li><a href="#">Подход к работе</a></li>
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">Клиенты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="container">
+                <div class="sidebar">
+                    <ul>
+                        <li><router-link to="/">Главное</router-link></li>
+                        <li><router-link to="/services">Услуги</router-link></li>
+                        <li><router-link to="/projects">Проекты</router-link></li>
+                        <li><router-link to="/technology">Технологии</router-link></li>
+                        <li><router-link to="/integrations">Интеграции</router-link></li>
+                        <!-- Принципи
+                        Статьи
+                        Нам доверяют
+                        Контакты -->
+                    </ul>
+                </div>
+                <div class="main">
+                    <router-view></router-view>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@next"></script>
+    <script>
+ const Home = { template: `<div class="main_item home shake">
+<h1>  Эксперты в разработке сайтов
+и мобильных приложений </h1>
+Создаём проекты эффективные для бизнеса и полезные для клиента.
+Решаем задачи любой сложности.
+Соблюдаем договоренности по срокам, бюджету и качеству кода.
+    </div>` }
+const Services = { template: `<div class="main_item services shake">
+    <h1>Услуги</h1>
+    <h3>Разработка мобильных приложений</h3>
+    <p class="pages">Создаем уникальные приложения для крупного и среднего бизнеса, интегрированные с вашими IT-системами. iOS/Android/Кроссплатформа</p>
+    <h3>Поддержка и развитие мобильных приложений</h3>
+    <p>Оптимизируем мобильные продукты под обновления iOS и Android и новые устройства. Развиваем функционал приложения согласно требованиям заказчика, отвечаем на вопросы пользователей</p>
+    <h3>Веб-приложения и сайты</h3>
+    <p>Разрабатываем Web-приложения и сайты с широким функционалом и сложными интеграциями.</p>
+    <h3>Дизайн и проектирование</h3>
+    <p>UI/UX дизайн. Создаем и улучшаем дизайн мобильных и web – приложений, сайтов, сервисов.</p>
+    <h3>Консультации</h3>
+    <p>Мы проводим аудит программной архитектуры и кода; консалтинг по организации процесса разработки.</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Мы создаем уникальные приложения для крупного и среднего бизнеса, интегрированные с вашими IT-системами. iOS/Android/Кроссплатформа. Отправьте нам заявку, если вам нужна консультация или расчет стоимости вашего проекта.</p>
+
+    </div>` }
+const Projects = { template: `<div class="main_item projects shake">Project Page</div>` }
+const Technology = { template: `<div class="main_item technology shake">Technology Page</div>` }
+const Integrations = { template: `<div class="main_item integrations shake">Integrations Page</div>` }
+  
+const routes = [
+  { path: '/', component: Home },
+  { path: '/services', component: Services },
+  { path: '/projects', component: Projects },
+  { path: '/technology', component: Technology },
+  { path: '/integrations', component: Integrations }
+];
+ 
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHistory(),
+  routes,
+});
+ 
+const app = Vue.createApp({
+    data() {
+        return {
+            noActivated: false
+        }
+    },
+});
+app.use(router);    
+app.mount('#app');
+    </script>
+    <script>
+var content = document.querySelector(".services")
+var bodyX = document.body.clientWidth / 2;
+var bodyY = document.body.clientHeight / 2;
+
+setInterval(() => {
+if(content !==null && content !==undefined){
+addEventListener("mousemove",function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+    var yyy;
+    var yy = (y - bodyY) / 30
+    if(yy > 0){
+        yyy = "-" + yy
+    }
+    else{
+        yyy = Math.abs(yy)
+    }
+
+    if(x > bodyX){
+        content.style.cssText=`transform: rotateY(${(x - bodyX) / 50}deg) rotateX(${yyy}deg) scale(${((x - bodyX) / 1000) + 1});`
+    }
+    else{
+        content.style.cssText=`transform: rotateY(${(x - bodyX) / 50}deg) rotateX(${yyy}deg) scale(${Math.abs(((x - bodyX) / 1000)- 1)}) ; z-index: 10; `
+    }
+})    
+}    
+}, 1000);   
+
+
+
+
+    </script>
+</body>
+</html>
