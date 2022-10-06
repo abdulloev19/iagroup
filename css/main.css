@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+body{
+    background-color: #111;
+    /* background-image: url(img/Untitledx.png); */
+    background-size: calc(100vh - 10px);
+    background-repeat: no-repeat;
+    background-position: center 50px;
+    background-attachment: fixed;
+    overflow-x: hidden;
+
+}
+
+.okno{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    background-color: #fff;
+    color: #000;
+    width: 200px;
+    height: 100px;
+}
+
+.wrapper{
+    max-width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header{
+    width: 100vw;
+    height: 50px;
+    background-color: #000;
+    box-shadow: 0 0 10px #fff;
+    position: fixed;
+    top: 0;
+}
+
+.header_content{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_menu ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.header_menu ul li {
+    display: block;
+    height: 100%;
+    padding: 0 13px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    border-bottom: 0.1rem solid transparent;
+    transition: all .3s;
+}
+.header_menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.header_menu ul li:hover{
+    border-color: #fff;
+}
+
+.container{
+    width: calc(100vw - 50px);
+    height: 93vh;
+    margin: 0px auto;
+    margin-top: 75px;
+    background-color: rgba(91, 142, 149, 0.48);
+    box-shadow: 0 0 10px #fff;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    transform-style: flat;
+    perspective: 1000px;
+    position: relative;
+
+}
+.container .sidebar{
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid #fff;
+    display: flex;
+    justify-content: start;
+}
+
+.container .sidebar ul{
+    width: 100%;
+}
+
+.container .sidebar ul li{
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    border-bottom: 1px solid #fff;
+}
+.container .sidebar ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    transition: all .3s ease-in;
+}
+
+.container .sidebar ul li a.router-link-active, li.router-link-active>a {
+    background-color: #fff;
+    color: #000;
+    }
+
+.container .sidebar ul li a:hover{
+    background: linear-gradient(40deg, rgba(255, 255, 255, 0.1),#fff);
+}
+
+.container .main{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+.container .main .main_item{
+    width: calc(100% -50px);
+    height: calc(100% - 50px);
+    border: 1px solid #fff;
+    margin: 15px;
+
+}
+
+
+.container .main .home h1{
+    padding: 10px;
+    text-align: center;
+}
+.container .main .services{
+    overflow: auto;
+
+}
+.container .main .services h1{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #fff;
+
+}
+.container .main .services h3{
+    padding: 10px;
+    text-align: center;
+    animation: h3animation 1.0s both;
+    border: 1px solid #fff;
+
+    animation-delay: 1s;    /* задержка в 1 секунду */
+}
+.container .main .services p {
+    width: 500px;
+    opacity: 0;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    animation: pages 1.0s both;
+    animation-delay: 1.5s;    /* задержка в 1 секунду */
+    box-shadow: 0 0 10px #fff;
+    border-radius: 8px;
+}
+
+
+/* .shake {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  } */
+
+.shake{
+    animation: backgroundColorAnimation 1.0s both;
+}
+@keyframes backgroundColorAnimation {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    70% {
+        opacity: 1;
+        width: calc(100% - 15px);
+    }
+    100%{
+        width: calc(100% - 30px);
+    }
+}
+
+@keyframes pages {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes h3animation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
