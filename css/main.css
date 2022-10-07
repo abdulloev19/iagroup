@@ -15,16 +15,6 @@ body{
 
 }
 
-.okno{
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    background-color: #fff;
-    color: #000;
-    width: 200px;
-    height: 100px;
-}
-
 .wrapper{
     max-width: 1170px;
     height: 100%;
@@ -81,7 +71,6 @@ header{
     height: 93vh;
     margin: 0px auto;
     margin-top: 75px;
-    background-color: rgba(91, 142, 149, 0.48);
     box-shadow: 0 0 10px #fff;
     border: 1px solid #fff;
     display: flex;
