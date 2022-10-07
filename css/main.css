@@ -123,11 +123,10 @@ header{
     color: #fff;
 }
 .container .main .main_item{
-    width: calc(100% -50px);
-    height: calc(100% - 50px);
+    width: 100%;
+    height: 100%;
     border: 1px solid #fff;
-    margin: 15px;
-
+    border-left: none;
 }
 
 
@@ -137,32 +136,74 @@ header{
 }
 .container .main .services{
     overflow: auto;
-
+    overflow-x: hidden;
 }
+
+.services_content{
+    width: 100%;
+    height: calc(100% - 50px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+
+/* width */
+.services::-webkit-scrollbar {
+    width: 10px;
+  }
+  .services::-webkit-scrollbar-track {
+    background: #000;
+  }
+  .services::-webkit-scrollbar-thumb {
+    background: #b6b6b6;
+  }
+  .services::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
 .container .main .services h1{
+    height: 50px;
     padding: 10px;
     text-align: center;
     border: 1px solid #fff;
-
+    border-left: none;
+    text-transform: uppercase;
 }
-.container .main .services h3{
-    padding: 10px;
-    text-align: center;
-    animation: h3animation 1.0s both;
-    border: 1px solid #fff;
 
+.services_item{
+    width: 500px;
+    border: 1px solid #fff;
+    margin: 20px auto;
+    animation: h3animation 1.0s both;
     animation-delay: 1s;    /* задержка в 1 секунду */
 }
-.container .main .services p {
-    width: 500px;
-    opacity: 0;
-    margin: 20px auto;
-    padding: 20px;
+
+.services_item h3{
+    height: 50px;
+    padding: 10px;
     text-align: center;
+    animation-delay: 1s;    /* задержка в 1 секунду */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #fff;
+    color: #000;
+    animation: h3animation 1.0s both;
+
+
+}
+.services_item p {
+    width: 500px;
+    height: calc(100% - 50px);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    text-align: center;
+    text-transform: uppercase;
     animation: pages 1.0s both;
     animation-delay: 1.5s;    /* задержка в 1 секунду */
-    box-shadow: 0 0 10px #fff;
-    border-radius: 8px;
 }
 
 
@@ -206,10 +247,8 @@ header{
     }
     70% {
         opacity: 1;
-        width: calc(100% - 15px);
     }
     100%{
-        width: calc(100% - 30px);
     }
 }
 
