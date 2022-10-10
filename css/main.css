@@ -114,7 +114,8 @@ header{
     }
 
 .container .sidebar ul li a:hover{
-    background: linear-gradient(40deg, rgba(255, 255, 255, 0.1),#fff);
+    background: #fff;
+    color: #000;
 }
 
 .container .main{
