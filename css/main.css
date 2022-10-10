@@ -283,7 +283,7 @@ header{
 }
 
 .projects .projects_content .projects_content_item {
-    background-color: rgba(0, 255, 255, 0.5);
+    box-shadow: -2px 2px 10px #fff;
     display: flex;
     align-items: center;
     justify-content: center;
