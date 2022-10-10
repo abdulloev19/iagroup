@@ -60,3 +60,33 @@ const app = Vue.createApp({
 });
 app.use(router);    
 app.mount('#app');
+
+    <!--script>
+var content = document.querySelector(".services")
+var bodyX = document.body.clientWidth / 2;
+var bodyY = document.body.clientHeight / 2;
+
+setInterval(() => {
+if(content !==null && content !==undefined){
+addEventListener("mousemove",function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+    var yyy;
+    var yy = (y - bodyY) / 30
+    if(yy > 0){
+        yyy = "-" + yy
+    }
+    else{
+        yyy = Math.abs(yy)
+    }
+
+    if(x > bodyX){
+        content.style.cssText=`transform: rotateY(${(x - bodyX) / 50}deg) rotateX(${yyy}deg) scale(${((x - bodyX) / 1000) + 1});`
+    }
+    else{
+        content.style.cssText=`transform: rotateY(${(x - bodyX) / 50}deg) rotateX(${yyy}deg) scale(${Math.abs(((x - bodyX) / 1000)- 1)}) ; z-index: 10; `
+    }
+})    
+}    
+}, 1000);   
+    </script-->
