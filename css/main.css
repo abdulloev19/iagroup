@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Gemunu Libre', sans-serif;
 }
 body{
     background-color: #111;
@@ -129,11 +129,34 @@ header{
     border-left: none;
 }
 
-
-.container .main .home h1{
+.container > .main > .main_item > h1{
     padding: 10px;
     text-align: center;
+    height: 50px;
+    border-bottom: 1px solid #fff;
 }
+.container .main .home .home_content{
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: h3animation 0.5s both;
+    animation-delay: 0.5s;    /* задержка в 1 секунду */
+    overflow: hidden;
+}
+.container .main .home p{
+    padding: 20px 50px;
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: 0px 5px 5px rgb(73, 184, 204);
+    animation: homeText 1s both;
+    animation-delay: 0.5s;    /* задержка в 1 секунду */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container .main .services{
     overflow: auto;
     overflow-x: hidden;
@@ -176,19 +199,19 @@ header{
     width: 500px;
     border: 1px solid #fff;
     margin: 20px auto;
-    animation: h3animation 1.0s both;
-    animation-delay: 1s;    /* задержка в 1 секунду */
+    animation: h3animation 0.5s both;
+    animation-delay: 0.5s;    /* задержка в 1 секунду */
 }
 
 .services_item h3{
     height: 50px;
     padding: 10px;
     text-align: center;
-    animation-delay: 1s;    /* задержка в 1 секунду */
+    animation-delay: 0.5s;    /* задержка в 1 секунду */
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     background-color: #fff;
     color: #000;
-    animation: h3animation 1.0s both;
+    animation: h3animation 0.5s both;
 
 
 }
@@ -203,42 +226,12 @@ header{
     text-align: center;
     text-transform: uppercase;
     animation: pages 1.0s both;
-    animation-delay: 1.5s;    /* задержка в 1 секунду */
+    animation-delay: 1.0s;    /* задержка в 1 секунду */
 }
 
 
-/* .shake {
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-  
-  @keyframes shake {
-    10%,
-    90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-  
-    20%,
-    80% {
-      transform: translate3d(2px, 0, 0);
-    }
-  
-    30%,
-    50%,
-    70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-  
-    40%,
-    60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  } */
-
 .shake{
-    animation: backgroundColorAnimation 1.0s both;
+    animation: backgroundColorAnimation 0.5s both;
 }
 @keyframes backgroundColorAnimation {
     0% {
@@ -268,4 +261,49 @@ header{
     to{
         opacity: 1;
     }
+}
+
+@keyframes homeText {
+    from{
+        margin-top: -100%;
+    }
+    to{
+        margin-top: 0;
+    }
+}
+
+.projects .projects_content{
+    width: 100%;
+    height: calc(100% - 50px);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 10px;
+}
+
+.projects .projects_content .projects_content_item {
+    background-color: rgba(0, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: h3animation 0.5s both;
+    animation-delay: 0.5s;    /* задержка в 1 секунду */
+}
+
+.projects .projects_content .projects_content_item h1{
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    animation: pages 0.5s both;
+    animation-delay: 1.0s;    /* задержка в 1 секунду */
+}
+.projects .projects_content .projects_content_item a {
+    text-decoration: none;
+}
+
+.projects .projects_content .projects_content_item h1:hover{
+    color: aliceblue;
+    border-color: aliceblue;
 }
