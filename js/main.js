@@ -61,7 +61,7 @@ const app = Vue.createApp({
 app.use(router);    
 app.mount('#app');
 
-    <!--script>
+/*
 var content = document.querySelector(".services")
 var bodyX = document.body.clientWidth / 2;
 var bodyY = document.body.clientHeight / 2;
@@ -88,5 +88,4 @@ addEventListener("mousemove",function(e){
     }
 })    
 }    
-}, 1000);   
-    </script-->
+}, 1000);  */
